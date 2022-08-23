@@ -1,16 +1,10 @@
-import "./Style.css"
-const  Header = () => {
+import React from 'react'
+import '../Style.css'
+export default function Header  ()  {
+  return (
+    <div className='header'>
+<h2 >Expense Tracker</h2>
+    </div>
    
-    return (
-        <header className="header">
-            <h1>Task Tracker</h1>
-            <button className="btn">Add</button>
-           
-        </header>
-    )
-
+  )
 }
-Header.defaultProps = {
-    title : "" ,
-}
-export default Header
