@@ -7,10 +7,10 @@ const Income = () => {
     const transactions = useContext(GlobalContext)
     const Amounts = transactions.transactions.map(transaction=>transaction.Amount)
     const Incomes = Amounts.filter((Amount)=> Amount>0)
-    console.log(Incomes)
+   
     const Expenses = Amounts.filter((Amount)=> Amount<0)
     const TotalIncomes = Incomes.reduce((acc , item)=> acc+=item,0).toFixed(2)
-    console.log(TotalIncomes)
+    
     const TotalExpenses = Expenses.reduce((acc , item)=> acc+=item , 0).toFixed(2)
   
   return (

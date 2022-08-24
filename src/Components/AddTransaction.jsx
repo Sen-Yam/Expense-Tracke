@@ -1,9 +1,19 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState , useContext } from 'react'
+import { GlobalContext } from '../Context/GlobalState'
 
 const AddTransaction = () => {
     const [Text , setText] = useState('')
     const [Amount , setAmount] = useState(0)
+    const {AddNewT} = useContext(GlobalContext)
+    const Submission = (e) => {
+      e.preventDefault();
+      console.log(Amount , Text)
+      var NewT = {id : Math.floor(Math.random()*100000000) ,Text  , Amount : +Amount}
+      console.log(NewT)
+      AddNewT(NewT)
+    }
+   
   return (
     <div className='Add'>
         <h3>Add new transaction</h3>  
@@ -22,7 +32,7 @@ const AddTransaction = () => {
        }}
        />
     </div>
-    <button className='addbtn'>Add transaction</button>
+    <button className='addbtn' onClick={Submission}>Add transaction</button>
     </div>
   )
 }

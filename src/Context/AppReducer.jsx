@@ -7,6 +7,11 @@ export default (state , dispatch)=> {
             
             transactions : state.transactions.filter(transaction=> (transaction.id !==dispatch.payload))
         }
+        case 'Add_New_T' : 
+        return  {
+            ...state  ,
+            transactions : [dispatch.payload,...state.transactions]
+        } 
         default :
         return state;
     }

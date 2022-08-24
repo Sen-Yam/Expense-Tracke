@@ -4,6 +4,7 @@ import { GlobalContext } from '../Context/GlobalState'
 import '../Style.css'
 const Balnace = () => {
   const transactions = useContext(GlobalContext)
+  
   const Amounts = transactions.transactions.map(transaction => (transaction.Amount))
   const Total = Amounts.reduce((acc,item)=> acc+=item,0).toFixed(2)
   return (
